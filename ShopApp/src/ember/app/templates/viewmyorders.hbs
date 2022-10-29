@@ -1,0 +1,33 @@
+{{page-title "Viewmyorders"}}
+
+<nav class="menu" align="right">
+<LinkTo @route="viewproducts">View Products List</LinkTo>
+<span class="tab"></span>
+<LinkTo @route="viewmycart">My Cart</LinkTo>
+<span class="tab"></span>
+<LinkTo @route="logout" >Log Out</LinkTo>
+</nav>
+
+<div align ="center"> <h2>My Orders</h2></div>
+	<p id="msg"></p>
+	<table class="tftable" border="1">
+
+		<tbody id="display">
+
+			<tr>
+				<th>Product Name</th>
+				<th>Ordered Quantity</th>
+				<th>Price</th>
+				<th>Net Price</th>
+			</tr>
+            {{#each @model as |result|}}
+        <tr>
+            <td>{{result.p_name}}</td>
+            <td>{{result.ordquan}}</td>
+            <td>{{result.price}}</td>
+            <td>{{result.netprice}}</td>
+        </tr>
+    {{/each}}
+		</tbody>
+	</table>
+{{outlet}}

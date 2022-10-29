@@ -1,0 +1,42 @@
+{{page-title "Myproducts"}}
+<nav class="menu" align="right">
+<LinkTo @route="orders">Orders</LinkTo>
+<span class="tab"></span>
+<LinkTo @route="logout" >Log Out</LinkTo>
+</nav>
+
+<Addproduct/>
+
+<div align="center"><h2>My Products</h2></div>
+
+
+	<table id="ordersTable" class="tftable" border="1">
+		<tbody id="display">
+
+			<tr>
+				<th>Product Name</th>
+				<th>Available Quantity</th>
+				<th>Price</th>
+                <th>Update</th>
+				<th>Remove</th>
+			</tr>
+
+
+        {{#each @model as |result|}}
+        <tr>
+            <td>{{result.p_name}}</td>
+            <td>{{result.avlquan}}
+                <Input @type="number" id="1{{result.p_name}}" min="1" @value="{{result.avlquan}}" />
+            </td>
+            <td>{{result.price}}
+                <Input @type="number" id="2{{result.p_name}}" min="1" @value="{{result.price}}"/>
+            </td>
+            <td><UpdateProduct
+            @p_name= {{result.p_name}}/></td>
+            <td><RemoveProduct
+            @p_name= {{result.p_name}}/></td>
+        </tr>
+    {{/each}}
+    </tbody>
+	</table>
+{{outlet}}

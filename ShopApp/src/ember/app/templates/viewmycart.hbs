@@ -1,0 +1,46 @@
+{{page-title "Viewmycart"}}
+
+<nav class="menu" align="right">
+<LinkTo @route="viewproducts">View Products List</LinkTo>
+<span class="tab"></span>
+<LinkTo @route="viewmyorders">My Orders</LinkTo>
+<span class="tab"></span>
+<LinkTo @route="logout" >Log Out</LinkTo>
+</nav>
+
+<div align="center"><h2>My Cart</h2></div>
+	<p id="msg"></p>
+	<table class="tftable" border="1">
+
+		<tbody id="display">
+
+			<tr>
+				<th>Product Name</th>
+				<th>Cart Quantity</th>
+                <th>Change Quantity</th>
+				<th>Price</th>
+                <th>NetPrice</th>
+                <th>Order</th>
+                <th>Remove</th>
+			</tr>
+            {{#each @model as |result|}}
+        <tr>
+            <td>{{result.p_name}}</td>
+            <td>{{result.cartquan}}</td>
+            <td><Input @type="number" id="{{result.p_name}}" min="1" />
+            <label>
+            <Addtocart
+            @name="Change"
+            @p_name= {{result.p_name}}/></label></td>
+            <td>{{result.price}}</td>
+            <td>{{result.netprice}}</td>
+            <td><Order
+            @p_name= {{result.p_name}}
+            @selectedquan ={{result.cartquan}}/></td>
+            <td><RemoveCartItem
+            @p_name= {{result.p_name}}/></td>
+        </tr>
+    {{/each}}
+		</tbody>
+	</table>
+{{outlet}}

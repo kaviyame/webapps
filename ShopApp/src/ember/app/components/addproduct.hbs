@@ -1,0 +1,27 @@
+<table id="addProductTable" class="tftable" border="1">
+		<tbody id="display">
+
+			<tr>
+				<th>Product Name</th>
+				<th>Price</th>
+                <th>Quantity</th>
+				<th>Add Product</th>
+			</tr>
+
+        <tr>
+            
+            <td>
+                <Input @type="text" id="pnid" />
+            </td>
+            <td>
+                <Input @type="number" id="prid" min="1" />
+            </td>
+            <td>
+                <Input @type="number" id="quanid" min="1" />
+            </td>
+            <td>
+                <button type="button" {{on 'click' this.addProduct}}>Add</button>
+            </td>
+        </tr>
+    </tbody>
+	</table>

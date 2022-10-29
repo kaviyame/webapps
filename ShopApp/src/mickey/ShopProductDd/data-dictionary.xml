@@ -1,0 +1,22 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="ShopProductDd">
+         <table name="ShopProduct">
+                  <columns>
+                           <column name="PNAME">
+                                    <data-type>CHAR</data-type> 
+                                     <nullable>false</nullable>                               
+                           </column>
+                           <column name="PRICE">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+                           <column name="QUANTITY">
+                                    <data-type>BIGINT</data-type>
+                           </column> 
+                           
+			   
+		    </columns> 	
+		    <primary-key name="ShopProduct_PK">
+			<primary-key-column>PNAME</primary-key-column>
+	            </primary-key>			 	                   
+         </table>
+</data-dictionary>

@@ -1,0 +1,28 @@
+{{page-title "Orders"}}
+<nav class="menu" align="right">
+<LinkTo @route="myproducts">My Products</LinkTo>
+<span class="tab"></span>
+<LinkTo @route="logout" >Log Out</LinkTo>
+</nav>
+
+<div align="center"><h2>ORDERS</h2></div>
+<table class="tftable" border="1">
+
+		<tbody id="display">
+
+			<tr>
+				<th>User Name</th>
+				<th>Product Name</th>
+				<th>Ordered Quantity</th>
+			</tr>
+
+            {{#each @model as |result|}}
+        <tr>
+            <td>{{result.username}}</td>
+            <td>{{result.p_name}}</td>
+            <td>{{result.ordquan}}</td>
+        </tr>
+    {{/each}}
+		</tbody>
+	</table>
+{{outlet}}

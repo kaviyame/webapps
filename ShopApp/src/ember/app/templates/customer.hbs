@@ -1,0 +1,17 @@
+{{page-title "Customer"}}
+
+<nav class="menu" align="right">
+    <LinkTo @route="shopowner">Shop Owner</LinkTo>
+</nav>
+
+<div align="center">
+
+<h2>Customer Registration Form</h2>			
+<Register/>
+
+<h2>Customer Login Form</h2>			
+<Login
+@customer="true"/>
+
+</div>
+{{outlet}}

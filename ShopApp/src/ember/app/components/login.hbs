@@ -1,0 +1,45 @@
+{{!-- template-lint-disable no-args-paths --}}
+{{#if this.customer}}
+<form {{on 'submit' this.submit}} action="http://localhost:8082/ShopApp/CustomerServlet" method="post" id="login-form">
+					{{!-- template-lint-disable table-groups --}}
+     <table >
+						<tr>
+							<td>UserName</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="text" name="username" required/></td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="password" name="password" required /></td>
+						</tr>
+					</table>
+					<input type="hidden" value="auth" name="verify" /> <input
+						type="hidden" value="Customer" name="userType" /> {{!-- template-lint-disable require-input-label --}}
+                                                        <input
+						type="submit" value="login" />
+
+				</form>        
+    {{else}}
+      {{!-- template-lint-disable no-duplicate-landmark-elements --}}
+                <form {{on 'submit' this.submit}} action="http://localhost:8082/ShopApp/ShopOwnerServlet" method="post" >
+					{{!-- template-lint-disable table-groups --}}
+     <table >
+						<tr>
+							<td>UserName</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="text" name="username" required/></td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="password" name="password" required /></td>
+						</tr>
+					</table>
+					<input type="hidden" value="auth" name="verify" /> <input
+						type="hidden" value="ShopOwner" name="userType" /> {{!-- template-lint-disable require-input-label --}}
+                                                        <input
+						type="submit" value="login" />
+
+				</form>   
+{{/if}}

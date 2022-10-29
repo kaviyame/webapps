@@ -1,0 +1,29 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="CustomerDd">
+         <table name="Customer">
+                  <columns>
+                           <column name="NAME">
+                                    <data-type>CHAR</data-type>                                
+                           </column>
+                           <column name="PASSWORD">
+                                    <data-type>CHAR</data-type>
+                           </column>
+                           <column name="CONTACT">
+                                    <data-type>CHAR</data-type>
+                           </column> 
+			   <column name="USERNAME">
+                                    <data-type>CHAR</data-type>
+                                     <nullable>false</nullable>
+                           </column>
+			   <column name="GENDER">
+                                    <data-type>CHAR</data-type>
+                           </column>  
+			    <column name="AGE">
+                                    <data-type>CHAR</data-type>
+                           </column>
+		    </columns> 	
+		    <primary-key name="Customer_PK">
+			<primary-key-column>USERNAME</primary-key-column>
+	            </primary-key>			 	                   
+         </table>
+</data-dictionary>

@@ -1,0 +1,40 @@
+{{page-title "Viewproducts"}}
+
+<nav class="menu" align="right">
+<LinkTo @route="viewmycart">My Cart</LinkTo>
+<span class="tab"></span>
+<LinkTo @route="viewmyorders">My Orders</LinkTo>
+<span class="tab"></span>
+<LinkTo @route="logout" >Log Out</LinkTo>
+</nav>
+
+<div align="center"><h2>Products List</h2></div>
+	<p id="msg"></p>
+	<table class="tftable" border="1">
+
+		<tbody id="display">
+
+			<tr>
+				<th>Product Name</th>
+				<th>Price</th>
+				<th>Available Quantity</th>
+				<th>Selected Quantity</th>
+				<th>Add To Cart</th>
+			</tr>
+            {{#each @model as |result|}}
+        <tr>
+            <td>{{result.p_name}}</td>
+            <td>{{result.price}}</td>
+            <td>{{result.avlquan}}</td>
+            <td>{{result.cartquan}}
+                <Input @type="number" id="{{result.p_name}}" min="1" max={{result.avlquan}}/>
+            </td>
+            <td><Addtocart
+            @name="Add To Cart"
+            @p_name= {{result.p_name}}/>
+            </td>
+        </tr>
+    {{/each}}
+		</tbody>
+	</table>
+{{outlet}}

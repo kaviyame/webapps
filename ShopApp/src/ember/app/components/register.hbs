@@ -1,0 +1,49 @@
+<form {{on 'submit' this.submit}} action="http://localhost:8082/ShopApp/CustomerServlet" method="post" id="reg-form" >
+					{{!-- template-lint-disable table-groups --}}
+     <table >
+						<tr>
+							<td>Customer Name</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="text" name="name" required /></td>
+						</tr>
+					
+						<tr>
+							<td>Gender</td>
+							<td><label for="male">Male</label> 
+							{{!-- template-lint-disable require-input-label --}}
+       <input type="radio" name="gender" value="male" checked> 
+							<label for="female">Female</label> 
+							<input type="radio" name="gender" value="female"></td>
+						</tr>
+						<tr>
+							<td>Age</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="number" name="age" required/></td>
+						</tr>
+						<tr>
+							<td>UserName</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="text" name="username" required/></td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="password" name="password" required/></td>
+						</tr>
+						<tr>
+							<td>Confirm Password</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="password" name="confirmpassword" required/></td>
+						</tr>
+						
+						<tr>
+							<td>Contact No</td>
+							<td>{{!-- template-lint-disable require-input-label --}}
+           <input type="text" name="contact" required/></td>
+						</tr>
+					</table>
+					<input type="hidden" value="validate" name="verify" /> <input
+						type="hidden" value="Customer" name="userType" /> {{!-- template-lint-disable require-input-label --}}
+                                                        <input
+						type="submit" value="register"/>
+				</form>

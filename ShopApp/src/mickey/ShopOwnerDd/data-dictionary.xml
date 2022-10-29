@@ -1,0 +1,27 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="ShopOwnerDd">
+         <table name="ShopOwner">
+                  <columns>
+                           <column name="NAME">
+                                    <data-type>CHAR</data-type>                                
+                           </column>
+                           <column name="PASSWORD">
+                                    <data-type>CHAR</data-type>
+                           </column>
+                           <column name="CONTACT">
+                                    <data-type>CHAR</data-type>
+                           </column> 
+                           <column name="SHOPOWNERNAME">
+                                    <data-type>CHAR</data-type>
+                           </column>
+			   <column name="USERNAME">
+                                    <data-type>CHAR</data-type>
+                                    <nullable>false</nullable>
+                           </column>
+			   
+		    </columns> 	
+		    <primary-key name="ShopOwner_PK">
+			<primary-key-column>USERNAME</primary-key-column>
+	            </primary-key>			 	                   
+         </table>
+</data-dictionary>

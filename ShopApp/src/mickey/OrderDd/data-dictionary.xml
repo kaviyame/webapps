@@ -1,0 +1,57 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="OrderDd">
+         <table name="Orders">
+                  <columns>
+                           <column name="ORDERID">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Orders.ORDERID</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="USERNAME">
+                                    <data-type>CHAR</data-type>  
+	                            <nullable>false</nullable>                                
+                           </column>
+                           <column name="SNAME">
+                                    <data-type>CHAR</data-type>  
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="PNAME">
+                                    <data-type>CHAR</data-type>  
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="QUANTITY">
+                                    <data-type>BIGINT</data-type>
+                                    <default-value>0</default-value>  
+                                    <nullable>false</nullable> 
+                           </column> 
+		    </columns> 	
+		    <primary-key name="Order_PK">
+                           <primary-key-column>ORDERID</primary-key-column>
+                  </primary-key>
+		    <foreign-keys>
+                           <!--Foreign Key with ON-DELETE-RESTRICT-->
+                           
+                           <!--Foreign Key with ON-DELETE-CASCADE-->
+                           <foreign-key name="Orders_FK2" reference-table-name="Customer">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>USERNAME</fk-local-column>
+                                                      <fk-reference-column>USERNAME</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                                    <fk-constraints>ON-DELETE-CASCADE</fk-constraints>
+                           </foreign-key>
+			   <foreign-key name="Orders_FK1" reference-table-name="ShopOwner">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>SNAME</fk-local-column>
+                                                      <fk-reference-column>USERNAME</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                                    <fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+                           </foreign-key>
+                  </foreign-keys>
+		 			 	                   
+         </table>
+</data-dictionary>
